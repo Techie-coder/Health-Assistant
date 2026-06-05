@@ -1,0 +1,79 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --primary: #0b5ed7;
+  --danger: #dc3545;
+  --warning: #ffc107;
+  --success: #198754;
+  --bg: #f0f4f8;
+  --card: #fff;
+  --text: #1a1a2e;
+  --muted: #6c757d;
+  --radius: 12px;
+}
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  max-width: 520px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 12px 12px 24px;
+}
+.hidden { display: none !important; }
+.header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+.header h1 { font-size: 1.25rem; color: var(--primary); }
+.subtitle { font-size: 0.85rem; color: var(--muted); margin-top: 2px; }
+#lang-select { padding: 8px; border-radius: 8px; border: 1px solid #ccc; }
+.tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 12px; }
+.tab {
+  padding: 10px 6px; border: 1px solid #d0d7de; background: var(--card);
+  border-radius: 10px; cursor: pointer; font-size: 0.78rem; font-weight: 600;
+}
+.tab.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.panel { display: none; background: var(--card); padding: 16px; border-radius: var(--radius); box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+.panel.active { display: block; }
+.disclaimer { background: #fff3cd; padding: 10px; border-radius: 8px; font-size: 0.85rem; margin-bottom: 14px; border-left: 4px solid var(--warning); }
+label { display: block; margin: 10px 0 6px; font-weight: 600; font-size: 0.9rem; }
+textarea, input, select {
+  width: 100%; padding: 12px; border: 1px solid #ced4da; border-radius: 10px; font-size: 1rem; background: #fff;
+}
+textarea { resize: vertical; min-height: 96px; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.actions { display: flex; gap: 8px; margin-top: 14px; }
+button {
+  padding: 11px 14px; border: none; border-radius: 10px; cursor: pointer;
+  background: #e9ecef; font-weight: 600; font-size: 0.9rem;
+}
+.btn-primary { background: var(--primary); color: #fff; flex: 1; }
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+.result { margin-top: 16px; padding: 14px; border-radius: 10px; font-size: 0.92rem; }
+.result h3 { margin-bottom: 8px; }
+.result ul { margin: 8px 0 0 18px; }
+.urgency-emergency { background: #f8d7da; border: 2px solid var(--danger); }
+.urgency-high { background: #fff3cd; border-left: 4px solid #fd7e14; }
+.urgency-medium { background: #cff4fc; border-left: 4px solid #0dcaf0; }
+.urgency-low { background: #d1e7dd; border-left: 4px solid var(--success); }
+.map { height: 220px; border-radius: 10px; margin: 12px 0; border: 1px solid #dee2e6; }
+.list { list-style: none; margin-top: 8px; }
+.list li { padding: 12px 0; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+.list li:last-child { border-bottom: none; }
+.chat-box { height: 240px; overflow-y: auto; border: 1px solid #dee2e6; border-radius: 10px; padding: 10px; margin: 10px 0; background: #fafbfc; }
+.chat-input { display: flex; gap: 8px; }
+.msg-bot { background: #e9ecef; padding: 8px 10px; border-radius: 10px; margin-bottom: 8px; max-width: 90%; font-size: 0.9rem; }
+.msg-user { background: #cfe2ff; padding: 8px 10px; border-radius: 10px; margin-bottom: 8px; margin-left: auto; max-width: 90%; text-align: right; font-size: 0.9rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.chip { padding: 6px 10px; font-size: 0.8rem; border-radius: 999px; background: #e7f1ff; color: var(--primary); }
+.hint { font-size: 0.85rem; color: var(--muted); margin-bottom: 6px; }
+.offline-banner { background: #6c757d; color: #fff; text-align: center; padding: 8px; border-radius: 8px; margin-bottom: 10px; font-size: 0.85rem; }
+.emergency-banner {
+  background: var(--danger); color: #fff; padding: 12px; border-radius: 10px;
+  margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; gap: 10px;
+}
+.emergency-banner button { background: #fff; color: var(--danger); }
+.footer { text-align: center; margin-top: 16px; color: var(--muted); font-size: 0.8rem; }
+.badge { display: inline-block; padding: 3px 8px; border-radius: 999px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+.badge-emergency { background: var(--danger); color: #fff; }
+.badge-high { background: #fd7e14; color: #fff; }
+.badge-medium { background: #0dcaf0; color: #000; }
+.badge-low { background: var(--success); color: #fff; }
